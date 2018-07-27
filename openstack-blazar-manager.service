@@ -1,0 +1,12 @@
+[Unit]
+Description=OpenStack Blazar Manager Service
+After=syslog.target network.target qpidd.service mysqld.service openstack-keystone.service openstack-nova-api.service openstack-nova-scheduler.service
+
+[Service]
+Type=notify
+User=blazar
+ExecStart=/usr/bin/blazar-manager --config-file /etc/blazar/blazar.conf
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

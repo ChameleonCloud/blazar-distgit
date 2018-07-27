@@ -1,0 +1,12 @@
+[Unit]
+Description=OpenStack Blazar API Service
+After=syslog.target network.target
+
+[Service]
+Type=simple
+User=blazar
+ExecStart=/usr/bin/blazar-api --config-file /etc/blazar/blazar.conf
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
