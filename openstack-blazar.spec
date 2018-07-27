@@ -4,7 +4,7 @@ Name:           openstack-blazar
 Epoch:          1
 Summary:        OpenStack Reservation (blazar)
 Version:        0.3.0
-Release:        6%{?dist}
+Release:        7%{?dist}
 License:        ASL 2.0
 URL:            http://www.openstack.org
 
