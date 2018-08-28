@@ -1,15 +1,15 @@
-%global git_branch chameleoncloud-ocata
+%global git_branch chameleoncloud-stable-rocky
 
 Name:           openstack-blazar
 Epoch:          1
 Summary:        OpenStack Reservation (blazar)
-Version:        0.3.0
-Release:        9%{?dist}
+Version:        2.0.0
+Release:        1%{?dist}
 License:        ASL 2.0
 URL:            http://www.openstack.org
 
-# Fetch the latest source from the chameleoncloud/ocata branch
-Source0:        https://github.com/ChameleonCloud/blazar/archive/chameleoncloud/ocata/blazar-%{version}.tar.gz
+# Fetch the latest source from the chameleoncloud/stable/rocky branch
+Source0:        https://github.com/ChameleonCloud/blazar/archive/chameleoncloud/stable/rocky/blazar-%{version}.tar.gz
 
 Source1:        openstack-blazar-api.service
 Source2:        openstack-blazar-manager.service
@@ -103,13 +103,10 @@ This package contains the Blazar daemon services.
 
 %files
 %{_bindir}/blazar-api
+%{_bindir}/blazar-api-wsgi
 %{_bindir}/blazar-db-manage
 %{_bindir}/blazar-manager
 %{_bindir}/blazar-rpc-zmq-receiver
-%{_bindir}/climate-api
-%{_bindir}/climate-db-manage
-%{_bindir}/climate-manager
-%{_bindir}/climate-rpc-zmq-receiver
 %doc LICENSE
 %doc README.rst
 %{_unitdir}/openstack-blazar-api.service
@@ -124,5 +121,5 @@ This package contains the Blazar daemon services.
 %{python_sitelib}/blazar-%{version}-*.egg-info
 
 %changelog
-* Wed Aug 23 2017 Pierre Riteau <priteau@uchicago.edu> 1:0.3.0-1
-- Initial packaging for Ocata
+* Tue Aug 28 2018 Pierre Riteau <pierre@stackhpc.com> 1:2.0.0-1
+- Initial packaging for Rocky
