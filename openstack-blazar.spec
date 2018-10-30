@@ -4,7 +4,7 @@ Name:           openstack-blazar
 Epoch:          1
 Summary:        OpenStack Reservation (blazar)
 Version:        2.0.0
-Release:        9%{?dist}
+Release:        10%{?dist}
 License:        ASL 2.0
 URL:            http://www.openstack.org
 
@@ -121,6 +121,8 @@ This package contains the Blazar daemon services.
 %{python_sitelib}/blazar-%{version}-*.egg-info
 
 %changelog
+* Tue Oct 30 2018 Pierre Riteau <pierre@stackhpc.com> 1:2.0.0-10
+- openstack/blazar: a8dd03eb9de254544c217ac59b8acba0b023f29b
 * Mon Oct 29 2018 Pierre Riteau <pierre@stackhpc.com> 1:2.0.0-9
 - openstack/blazar: eec7c5fbd4c89a13035b93e3918856e98a100982
 * Wed Oct 17 2018 Jason Anderson <jasonanderson@uchicago.edu> 1:2.0.0-8
