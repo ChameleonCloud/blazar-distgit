@@ -80,12 +80,12 @@ install -p -D -m 640 %{SOURCE4} %{buildroot}/%{_sysconfdir}/blazar/blazar.conf
 install -p -D -m 640 etc/policy.json %{buildroot}/%{_sysconfdir}/blazar/policy.json
 
 # Copy DB migration config
-install -p -D -m 640 blazar/db/migration/alembic.ini %{buildroot}/%{python_sitelib}/blazar/db/migration/alembic.ini
+install -p -D -m 644 blazar/db/migration/alembic.ini %{buildroot}/%{python_sitelib}/blazar/db/migration/alembic.ini
 install -p -D -d blazar/db/migration/alembic_migrations %{buildroot}/%{python_sitelib}/blazar/db/migration/alembic_migrations
 install -p -D -d blazar/db/migration/alembic_migrations/versions %{buildroot}/%{python_sitelib}/blazar/db/migration/alembic_migrations/versions
-install -p -D -m 640 blazar/db/migration/alembic_migrations/*.* %{buildroot}/%{python_sitelib}/blazar/db/migration/alembic_migrations
-install -p -D -m 640 blazar/db/migration/alembic_migrations/versions/*.* %{buildroot}/%{python_sitelib}/blazar/db/migration/alembic_migrations/versions
-install -p -D -m 640 blazar/db/migration/alembic_migrations/versions/README %{buildroot}/%{python_sitelib}/blazar/db/migration/alembic_migrations/versions/README
+install -p -D -m 644 blazar/db/migration/alembic_migrations/*.* %{buildroot}/%{python_sitelib}/blazar/db/migration/alembic_migrations
+install -p -D -m 644 blazar/db/migration/alembic_migrations/versions/*.* %{buildroot}/%{python_sitelib}/blazar/db/migration/alembic_migrations/versions
+install -p -D -m 644 blazar/db/migration/alembic_migrations/versions/README %{buildroot}/%{python_sitelib}/blazar/db/migration/alembic_migrations/versions/README
 
 %pre
 getent group blazar >/dev/null || groupadd -r blazar
